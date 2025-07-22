@@ -339,6 +339,7 @@ export const UserDataSchema = z.object({
   requiredStreamExpressions: z.array(z.string().min(1).max(3000)).optional(),
   preferredStreamExpressions: z.array(z.string().min(1).max(3000)).optional(),
   includedStreamExpressions: z.array(z.string().min(1).max(3000)).optional(),
+  disableGroups: z.boolean().optional(),
   groups: z
     .array(
       z.object({
@@ -367,6 +368,7 @@ export const UserDataSchema = z.object({
     uncachedAnime: z.array(SortCriterion).optional(),
   }),
   rpdbApiKey: z.string().optional(),
+  rpdbUseRedirectApi: z.boolean().optional(),
   formatter: Formatter,
   proxy: StreamProxyConfig.optional(),
   resultLimits: ResultLimitOptions.optional(),
